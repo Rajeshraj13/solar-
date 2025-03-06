@@ -808,13 +808,13 @@
             <div class="portfolio-item">
               <div class="portfolio-img">
                 <img class="img-fluid" src="assets/img/images/service7.jpg" alt="Service Image"
-                     style="width: 600px !important; height: 350px !important; display: block;" />
+                  style="width: 600px !important; height: 350px !important; display: block;" />
                 <a class="popup-img portfolio-link" href="assets/img/images/service7.jpg">
                   <i class="far fa-plus"></i>
                 </a>
               </div>
             </div>
-            
+
 
 
 
@@ -1120,11 +1120,12 @@
 
     <!-- map -->
     <div class="contact-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.34194156103!2d-74.03927096447748!3d40.759040329405195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4a01c8df6fb3cb8!2sSolomon%20R.%20Guggenheim%20Museum!5e0!3m2!1sen!2sbd!4v1619410634508!5m2!1sen!2s"
+      <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://maps.google.com/maps?width=802&amp;height=480&amp;hl=en&amp;q=3/159,Opp To Bhagavathi Amman Kovil, <br> Pappammalpuram,Andipatti,Theni-625512&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         style="border: 0" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <!-- partner area end -->
+
+
   </main>
 
   <!-- footer area -->
@@ -1211,7 +1212,7 @@
                     <a href="#service"><i class="far fa-angle-double-right"></i>Solar
                       Maintenance</a>
                   </li>
-                 
+
                 </ul>
               </div>
             </div>
@@ -1404,112 +1405,112 @@
 
   <script>
     document.getElementById("newsletter-form").addEventListener("submit", function (event) {
-    event.preventDefault();
+      event.preventDefault();
 
-    const { jsPDF } = window.jspdf;
-    let doc = new jsPDF();
+      const { jsPDF } = window.jspdf;
+      let doc = new jsPDF();
 
-    let y = 20; // Initial Y position
-    let maxWidth = 180; // Max width for text wrapping
-    let lineHeight = 8; // Line height spacing
+      let y = 20; // Initial Y position
+      let maxWidth = 180; // Max width for text wrapping
+      let lineHeight = 8; // Line height spacing
 
-    // Function to add wrapped text with spacing
-    function addText(doc, text, x, y) {
+      // Function to add wrapped text with spacing
+      function addText(doc, text, x, y) {
         let splitText = doc.splitTextToSize(text, maxWidth);
         if (y + splitText.length * lineHeight > 280) {
-            doc.addPage();
-            y = 20;
+          doc.addPage();
+          y = 20;
         }
         doc.text(splitText, x, y);
         return y + splitText.length * lineHeight; // Adjust Y position dynamically
-    }
+      }
 
-    // Title
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(16);
-    doc.text("Welcome to Volticc Marts", 10, y);
-    y += 12;
+      // Title
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(16);
+      doc.text("Welcome to Volticc Marts", 10, y);
+      y += 12;
 
-    // Introduction
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    y = addText(doc, "Where innovation meets energy independence! Experience the power of solar like never before and maximize your savings effortlessly.", 10, y);
+      // Introduction
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      y = addText(doc, "Where innovation meets energy independence! Experience the power of solar like never before and maximize your savings effortlessly.", 10, y);
 
-    y = addText(doc, "Are you frustrated with high electricity bills even after installing solar?\nAre you still relying on the grid, unsure if solar can truly save you money?\nAre you tired from many suggestions against solar power for your grid?\nYou're not alone—many solar users experience inefficiencies that prevent them from getting the savings they deserve.", 10, y);
+      y = addText(doc, "Are you frustrated with high electricity bills even after installing solar?\nAre you still relying on the grid, unsure if solar can truly save you money?\nAre you tired from many suggestions against solar power for your grid?\nYou're not alone—many solar users experience inefficiencies that prevent them from getting the savings they deserve.", 10, y);
 
-    // Section: Volticc Marts Guarantee
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text("At Volticc Marts, we don’t just install solar—we guarantee results.", 10, y);
-    y += 10;
+      // Section: Volticc Marts Guarantee
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("At Volticc Marts, we don’t just install solar—we guarantee results.", 10, y);
+      y += 10;
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    y = addText(doc, "Our expert-driven optimization model ensures you get the maximum return from your solar investment.", 10, y);
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      y = addText(doc, "Our expert-driven optimization model ensures you get the maximum return from your solar investment.", 10, y);
 
-    // Section: Why Volticc Marts?
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text("Why Volticc Marts?", 10, y);
-    y += 10;
+      // Section: Why Volticc Marts?
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Why Volticc Marts?", 10, y);
+      y += 10;
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    y = addText(doc, "Proven Track Record – 150 successful solar projects and 25+ satisfied clients trust us.", 10, y);
-    y = addText(doc, "Data-Driven Solar Optimization – Unlike others, we use real-time analytics to fine-tune your solar power.", 10, y);
-    y = addText(doc, "Custom Savings Model – Reduce energy costs by up to 80%.", 10, y);
-    y = addText(doc, "Reliable Battery & Inverter Solutions – Extend your stored energy for seamless power supply.", 10, y);
-   
-    // Section: How Much Can You Save?
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text("How Much Can You Save?", 10, y);
-    y += 10;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      y = addText(doc, "Proven Track Record – 150 successful solar projects and 25+ satisfied clients trust us.", 10, y);
+      y = addText(doc, "Data-Driven Solar Optimization – Unlike others, we use real-time analytics to fine-tune your solar power.", 10, y);
+      y = addText(doc, "Custom Savings Model – Reduce energy costs by up to 80%.", 10, y);
+      y = addText(doc, "Reliable Battery & Inverter Solutions – Extend your stored energy for seamless power supply.", 10, y);
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    y = addText(doc, "Without Optimization:\nTraditional solar setups often lose up to 40% efficiency due to poor setup, dust, or outdated inverters.", 10, y);
-    y = addText(doc, "With Volticc Marts Optimization:\nOur advanced techniques recover lost power, improve efficiency, and cut your electricity bill drastically.", 10, y);
-    y = addText(doc, "Smart Battery & Grid Hybrid Solutions:\nWe help you balance solar and grid usage for maximum savings with zero downtime.", 10, y);
-    y = addText(doc, "Our domestic customers report an average of 60-80% savings on energy costs!", 10, y);
-    y = addText(doc, "Our non-domestic customers report an average of 40-60% savings on energy costs!", 10, y);
+      // Section: How Much Can You Save?
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("How Much Can You Save?", 10, y);
+      y += 10;
 
-    // Section: Free Solar Efficiency Audit
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text("See the Difference for Yourself – Free Solar Efficiency Audit!", 10, y);
-    y += 10;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      y = addText(doc, "Without Optimization:\nTraditional solar setups often lose up to 40% efficiency due to poor setup, dust, or outdated inverters.", 10, y);
+      y = addText(doc, "With Volticc Marts Optimization:\nOur advanced techniques recover lost power, improve efficiency, and cut your electricity bill drastically.", 10, y);
+      y = addText(doc, "Smart Battery & Grid Hybrid Solutions:\nWe help you balance solar and grid usage for maximum savings with zero downtime.", 10, y);
+      y = addText(doc, "Our domestic customers report an average of 60-80% savings on energy costs!", 10, y);
+      y = addText(doc, "Our non-domestic customers report an average of 40-60% savings on energy costs!", 10, y);
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    y = addText(doc, "Limited-Time Offer: Claim your FREE Solar Performance Audit to see where you’re losing power and how we can help.", 10, y);
+      // Section: Free Solar Efficiency Audit
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("See the Difference for Yourself – Free Solar Efficiency Audit!", 10, y);
+      y += 10;
 
-    // Contact Information
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text("Contact Us:", 10, y);
-    y += 10;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      y = addText(doc, "Limited-Time Offer: Claim your FREE Solar Performance Audit to see where you’re losing power and how we can help.", 10, y);
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    y = addText(doc, "Call: 8300194967", 10, y);
-    y = addText(doc, "WhatsApp: (Insert WhatsApp Chat Link Here)", 10, y);
+      // Contact Information
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Contact Us:", 10, y);
+      y += 10;
 
-    // Footer
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text("Best Regards,", 10, y);
-    y += 10;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      y = addText(doc, "Call: 8300194967", 10, y);
+      y = addText(doc, "WhatsApp: (Insert WhatsApp Chat Link Here)", 10, y);
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    doc.text("Rajeshwaramoorthy Chandran", 10, y);
-    y += 6;
-    doc.text("Volticc Marts – Stay Power, Stay Ahead, Stay Volticc Marts", 10, y);
+      // Footer
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Best Regards,", 10, y);
+      y += 10;
 
-    // Save PDF
-    doc.save("Volticc_Marts_Info.pdf");
-});
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      doc.text("Rajeshwaramoorthy Chandran", 10, y);
+      y += 6;
+      doc.text("Volticc Marts – Stay Power, Stay Ahead, Stay Volticc Marts", 10, y);
+
+      // Save PDF
+      doc.save("Volticc_Marts_Info.pdf");
+    });
 
   </script>
 </body>
